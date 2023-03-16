@@ -1,0 +1,18 @@
+.profile__work {
+  grid-area: work;
+  align-self: flex-start;
+  margin: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
+}
+@media screen and (max-width: 1078px) {
+  .profile__work {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+  }
+}
