@@ -3,8 +3,8 @@
   margin: auto;
   display: flex;
   margin-top: 45px;
-  height: 74px;
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  padding-bottom: 42px;
 }
 @media screen and (max-width: 1078px) {
   .header {
@@ -16,5 +16,6 @@
     width: 100%;
     margin-top: 28px;
     height: 56px;
+    padding-bottom: 0;
   }
 }
