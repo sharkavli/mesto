@@ -14,7 +14,6 @@
 @media screen and (max-width: 560px) {
   .popup__container {
     width: 282px;
-    height: 322px;
     font-style: normal;
     font-weight: 900;
     font-size: 18px;

@@ -13,9 +13,9 @@
         <img src="./images/logo.svg" alt="Лого" class="header__logo" />
       </header>
       <section class="profile">
-        <img src="./images/avatar.svg" alt="" class="profile__avatar" />
+        <img src="./images/avatar.svg" alt="аватар" class="profile__avatar" />
         <div class="profile__info">
-          <h2 class="profile__name">Жак-Ив Кусто</h2>
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
           <p class="profile__work">Исследователь океана</p>
           <button type="button" class="profile__edit-button"></button>
         </div>
@@ -29,36 +29,66 @@
             class="element__photo"
           />
           <div class="element__panel">
-            <p class="element__name">Карачаевск</p>
-            <img src="./images/like.svg" alt="Нравится" class="element__like" />
+            <h2 class="element__name">Карачаевск</h2>
+            <button class="element__set-like">
+              <img
+                src="./images/like.svg"
+                alt="Нравится"
+                class="element__like"
+              />
+            </button>
           </div>
         </div>
         <div class="element">
           <img src="./images/elbrus.jpg" alt="Фото" class="element__photo" />
           <div class="element__panel">
-            <p class="element__name">Гора Эльбрус</p>
-            <img src="./images/like.svg" alt="Нравится" class="element__like" />
+            <h2 class="element__name">Гора Эльбрус</h2>
+            <button class="element__set-like">
+              <img
+                src="./images/like.svg"
+                alt="Нравится"
+                class="element__like"
+              />
+            </button>
           </div>
         </div>
         <div class="element">
           <img src="./images/dombay.jpg" alt="Фото" class="element__photo" />
           <div class="element__panel">
-            <p class="element__name">Домбай</p>
-            <img src="./images/like.svg" alt="Нравится" class="element__like" />
+            <h2 class="element__name">Домбай</h2>
+            <button class="element__set-like">
+              <img
+                src="./images/like.svg"
+                alt="Нравится"
+                class="element__like"
+              />
+            </button>
           </div>
         </div>
         <div class="element">
           <img src="./images/elbrus.jpg" alt="Фото" class="element__photo" />
           <div class="element__panel">
-            <p class="element__name">гора Эльбрус</p>
-            <img src="./images/like.svg" alt="Нравится" class="element__like" />
+            <h2 class="element__name">Гора Эльбрус</h2>
+            <button class="element__set-like">
+              <img
+                src="./images/like.svg"
+                alt="Нравится"
+                class="element__like"
+              />
+            </button>
           </div>
         </div>
         <div class="element">
           <img src="./images/dombay.jpg" alt="Фото" class="element__photo" />
           <div class="element__panel">
-            <p class="element__name">Домбай</p>
-            <img src="./images/like.svg" alt="Нравится" class="element__like" />
+            <h2 class="element__name">Домбай</h2>
+            <button class="element__set-like">
+              <img
+                src="./images/like.svg"
+                alt="Нравится"
+                class="element__like"
+              />
+            </button>
           </div>
         </div>
         <div class="element">
@@ -68,31 +98,44 @@
             class="element__photo"
           />
           <div class="element__panel">
-            <p class="element__name">Карачаево-Черкессия</p>
-            <img src="./images/like.svg" alt="Нравится" class="element__like" />
+            <h2 class="element__name">Карачаево-Черкессия</h2>
+            <button class="element__set-like">
+              <img
+                src="./images/like.svg"
+                alt="Нравится"
+                class="element__like"
+              />
+            </button>
           </div>
         </div>
       </section>
       <footer class="footer">
         <p class="footer__text">© 2023 Mesto Russia</p>
-        <p class="footer__author">Саид Авлиев</p>
       </footer>
       <div class="popup">
         <div class="popup__container">
           <button type="button" class="popup__close"></button>
-          <p class="popup__info">Редактировать профиль</p>
-          <form action="form" class="popup__form">
-            <input class="popup__name" type="text" placeholder="Имя" />
+          <h2 class="popup__info">Редактировать профиль</h2>
+          <form class="popup__form" name="maininfo">
             <input
-              class="popup__work"
-              type=" text"
+              id="inputName"
+              name="name"
+              class="popup__input"
+              type="input"
+              placeholder="Имя"
+            />
+            <input
+              id="inputWork"
+              name="work"
+              class="popup__input"
+              type="input"
               placeholder="Род деятельности"
             />
+            <button type="submit" class="popup__save">Сохранить</button>
           </form>
-          <button class="popup__save">Сохранить</button>
         </div>
       </div>
     </div>
+    <script src="./script.js"></script>
   </body>
-  <script src="./script.js"></script>
 </html>

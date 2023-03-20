@@ -6,13 +6,20 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 332px;
 }
 @media screen and (max-width: 1078px) {
   .profile__work {
-    font-style: normal;
-    font-weight: 400;
     font-size: 14px;
     line-height: 17px;
     text-align: center;
+  }
+}
+@media screen and (max-width: 600px) {
+  .profile__work {
+    max-width: 190px;
   }
 }

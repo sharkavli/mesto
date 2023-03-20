@@ -1,37 +1,37 @@
 let edit = document.querySelector('.profile__edit-button');
 let close = document.querySelector('.popup__close');
-let save = document.querySelector('.popup__save');
-let nameEdit = document.querySelector('.popup__name');
-let workEdit = document.querySelector('.popup__work');
+let form = document.querySelector('.popup__form');
+let nameEdit = document.querySelector('#inputName');
+let workEdit = document.querySelector('#inputWork');
 let popup = document.querySelector('.popup');
 let visName = document.querySelector('.profile__name');
 let visWork = document.querySelector('.profile__work');
-let like = document.querySelectorAll('.element__like')
-let backgroundOfPopup = document.querySelector('.popup')
-
-nameEdit.value = visName.textContent
-workEdit.value = visWork.textContent
-
-edit.addEventListener('click', openEditForm)
+let backgroundOfPopup = document.querySelector('.popup');
 
 function openEditForm() {
-    popup.classList.add("popup__opened")
+    popup.classList.add("popup_opened")
+    nameEdit.value = visName.textContent
+    workEdit.value = visWork.textContent
 }
-
-close.addEventListener('click', closeEditForm)
+edit.addEventListener('click', openEditForm)
 
 function closeEditForm() {
-    popup.classList.remove("popup__opened")
+    popup.classList.remove("popup_opened")
 }
+close.addEventListener('click', closeEditForm)
 
-save.addEventListener('click', saveEdit)
+form.addEventListener('submit', (saveEdit)=>{
+    saveEdit.preventDefault();
+    visName.textContent = nameEdit.value;
+    visWork.textContent = workEdit.value;
+    closeEditForm();
+});
 
-function saveEdit() {
-    if (nameEdit.value.length === 0 || workEdit.value.length === 0) {
-        alert('Введите имя и род деятельности!')
-    } else {
-        visName.textContent = nameEdit.value
-        visWork.textContent = workEdit.value
-        popup.classList.remove("popup__opened")
-    }
-}
+
+// function saveEdit() {
+//     saveEdit.preventDefault();
+//     visName.textContent = nameEdit.value;
+//     visWork.textContent = workEdit.value;
+//     closeEditForm();
+// }
+// form.addEventListener('submit', saveEdit)
