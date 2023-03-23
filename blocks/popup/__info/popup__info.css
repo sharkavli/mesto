@@ -9,7 +9,7 @@
 }
 @media screen and (max-width: 560px) {
   .popup__info {
-    padding-top: 20px;
+    padding-top: 25px;
     padding-bottom: 80px;
     font-size: 18px;
     line-height: 22px;

@@ -6,7 +6,6 @@ let workEdit = document.querySelector('#inputWork');
 let popup = document.querySelector('.popup');
 let visName = document.querySelector('.profile__name');
 let visWork = document.querySelector('.profile__work');
-let backgroundOfPopup = document.querySelector('.popup');
 
 function openEditForm() {
     popup.classList.add("popup_opened")
