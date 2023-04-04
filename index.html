@@ -25,11 +25,11 @@
       <footer class="footer">
         <p class="footer__text">© 2023 Mesto Russia</p>
       </footer>
-      <div class="popup">
+      <div class="popup" id="popupProfile">
         <div class="popup__container">
-          <button type="button" class="popup__close"></button>
+          <button type="button" class="popup__close" id="closeProfile"></button>
           <h2 class="popup__info">Редактировать профиль</h2>
-          <form class="popup__form" name="maininfo">
+          <form class="popup__form" name="maininfo" id="formProfile">
             <input
               id="inputName"
               name="name"
@@ -52,7 +52,7 @@
         <div class="popup__container">
           <button type="button" class="popup__close" id="closeAdd"></button>
           <h2 class="popup__info">Новое место</h2>
-          <form id="formAdd" class="popup__form" name="maininfo">
+          <form class="popup__form" name="maininfo" id="formAdd">
             <input
               id="inputTitle"
               name="title"

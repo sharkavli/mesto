@@ -1,6 +1,7 @@
 .popup__photo-container {
   position: relative;
   width: max-content;
+  max-width: 80vh;
   max-height: 80vh;
 }
 
