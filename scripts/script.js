@@ -52,12 +52,13 @@ const deleteEl = cardElements.querySelector('.element__delete');
 const closeButtons = document.querySelectorAll('.popup__close');
 const page = document.querySelector('.page');
 //проверка кнопки
-// function disableButton() {
-//   const buttons = document.querySelectorAll('.popup__save');
-//   buttons.forEach((button) => {
-//       button.classList.add('popup__save_inactive');
-//   })
-// }
+function disableButton() {
+  const buttons = document.querySelectorAll('.popup__save');
+  buttons.forEach((button) => {
+    button.classList.add('popup__save_inactive');
+    button.setAttribute('disabled', true);
+  });
+}
 //функции открытия и закрытия всех попапов
 function openPopup(popup) {
   popup.classList.add('popup_opened');
@@ -83,7 +84,7 @@ formProfile.addEventListener('submit', (saveEdit) => {
 //кнокпа открытия попапа добавления
 openAdd.addEventListener('click', () => {
   openPopup(popupAdd);
-  // disableButton();
+  disableButton();
 });
 //открытие картинки
 // cardImage.addEventListener('click', ()=>{
