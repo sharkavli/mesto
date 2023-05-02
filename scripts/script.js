@@ -51,9 +51,18 @@ const cardName = cardElements.querySelector('.element__name');
 const deleteEl = cardElements.querySelector('.element__delete');
 const closeButtons = document.querySelectorAll('.popup__close');
 //проверка кнопки
-const disableButton = (button) => {
-  button.classList.add('popup__save_inactive');
-  button.setAttribute('disabled', true);
+const disableButton = (form, button) => {
+  const inputs = form.querySelectorAll('.popup__input');
+  const arrInputs = Array.from(inputs);
+  arrInputs.forEach((input) => {
+    if (!input.validity.valid) {
+      button.classList.add('popup__save_inactive');
+      button.setAttribute('disabled', true);
+    } else {
+      button.classList.remove('popup__save_inactive');
+      button.removeAttribute('disabled', true);
+    }
+  });
 };
 //функции открытия и закрытия всех попапов
 function openPopup(popup) {
@@ -66,10 +75,11 @@ function closePopup(popup) {
 }
 //кнопки открытия попапа профиля
 edit.addEventListener('click', () => {
-  disableButton(popupProfile.querySelector('.popup__save'));
+  const button = popupProfile.querySelector('.popup__save');
+  disableButton(popupProfile, button);
   openPopup(popupProfile);
-  nameEdit.value = visName.textContent;
-  workEdit.value = visWork.textContent;
+  // nameEdit.value = visName.textContent;
+  // workEdit.value = visWork.textContent;
 });
 //кнопка сохранения попапа профиля
 formProfile.addEventListener('submit', (saveEdit) => {
@@ -80,8 +90,9 @@ formProfile.addEventListener('submit', (saveEdit) => {
 });
 //кнокпа открытия попапа добавления
 openAdd.addEventListener('click', () => {
+  const button = popupProfile.querySelector('.popup__save');
   openPopup(popupAdd);
-  disableButton(popupAdd.querySelector('.popup__save'));
+  disableButton(popupProfile, button);
 });
 //функция закрытие по всем крестикам
 closeButtons.forEach((button) => {
