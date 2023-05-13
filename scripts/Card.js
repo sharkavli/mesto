@@ -1,34 +1,7 @@
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg',
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg',
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg',
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
-  },
-];
 const popupImg = document.querySelector('#popupImg');
 const popupImage = document.querySelector('.popup__image');
 const popupBottomText = document.querySelector('.popup__text');
 const closeImage = document.querySelector('#closeImg');
-const elementList = document.querySelector('.elements');
 
 class Card {
   constructor(item, templateSelector) {
@@ -66,7 +39,6 @@ class Card {
       .addEventListener('click', () => {
         this._removeCard();
       });
-    // this._setLike();
     this._element
       .querySelector('.element__like')
       .addEventListener('click', () => {
@@ -109,15 +81,5 @@ class Card {
     return this._element;
   }
 }
-const renderCards = () => {
-  initialCards.forEach((item) => {
-    const card = new Card(item, '#elements');
-    const cardElement = card.generateCard();
-    elementList.append(cardElement);
-  });
-};
-
-renderCards();
 
 export default Card;
-export { elementList };

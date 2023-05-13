@@ -1,13 +1,3 @@
-const profileForm = document.querySelector('#formProfile');
-const validationConfig = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__save',
-  inactiveButtonClass: 'popup__save_inactive',
-  inputErrorClass: 'popup__input_error',
-  errorClass: 'popup__error-message_active',
-};
-
 class FormValidator {
   constructor(validationConfig, formElement) {
     this._formSelector = validationConfig.formSelector;
@@ -19,26 +9,11 @@ class FormValidator {
     this._formElement = formElement;
   }
 
-  //   enableValidation() {
-  //     const formList = Array.from(document.querySelectorAll(this._formSelector));
-  //     const formListtest = this._formElement;
-  //     console.log(formList);
-  //     console.log(formListtest);
-  //     formList.forEach((formElement) => {
-  //       this._setEventListeners(formElement);
-  //       formElement.addEventListener('submit', function (evt) {
-  //         evt.preventDefault();
-  //         console.log(formElement);
-  //       });
-  //     });
-  //   }
-
   enableValidation() {
     const formElement = this._formElement;
     this._setEventListeners(formElement);
     formElement.addEventListener('submit', (evt) => {
       evt.preventDefault();
-      console.log(123);
     });
   }
 
@@ -98,8 +73,5 @@ class FormValidator {
     errorElement.textContent = '';
   }
 }
-
-const profileValidation = new FormValidator(validationConfig, profileForm);
-profileValidation.enableValidation();
 
 export default FormValidator;
