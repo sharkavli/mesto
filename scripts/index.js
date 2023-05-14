@@ -40,9 +40,9 @@ const validationConfig = {
 import Card from './Card.js';
 import FormValidator from './FormValidator.js';
 
-const popupImage = document.querySelector('.popup__image');
-const popupBottomText = document.querySelector('.popup__text');
-const closeImage = document.querySelector('#closeImg');
+// const popupImage = document.querySelector('.popup__image');
+// const popupBottomText = document.querySelector('.popup__text');
+// const closeImage = document.querySelector('#closeImg');
 // const cardsSection = document.querySelector('.elements');
 // const cardsTemplate = document.querySelector('#elements').content;
 const edit = document.querySelector('.profile__edit-button');
