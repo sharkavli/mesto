@@ -201,8 +201,8 @@ function createCard(item) {
 ///включение валидации
 const profileValidation = new FormValidator(validationConfig, formProfile);
 const addValidation = new FormValidator(validationConfig, formAdd);
-profileValidation.enableValidation();
-addValidation.enableValidation();
+// profileValidation.enableValidation();
+// addValidation.enableValidation();
 //закрытие кнопкой esc
 function handleEscape(evt) {
   if (evt.key === 'Escape') {
