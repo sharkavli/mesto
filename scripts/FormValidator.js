@@ -72,6 +72,21 @@ class FormValidator {
     inputElement.classList.remove(this._errorClass);
     errorElement.textContent = '';
   }
+
+  disableButton = (form, button) => {
+    const inputs = form.querySelectorAll('.popup__input');
+    const arrInputs = Array.from(inputs);
+    console.log(arrInputs);
+    arrInputs.forEach((input) => {
+      if (!input.validity.valid) {
+        button.classList.add('popup__save_inactive');
+        button.setAttribute('disabled', true);
+      } else {
+        button.classList.remove('popup__save_inactive');
+        button.removeAttribute('disabled', true);
+      }
+    });
+  };
 }
 
 export default FormValidator;

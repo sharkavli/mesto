@@ -94,16 +94,17 @@ export function closePopup(popup) {
 }
 //кнопки открытия попапа профиля
 edit.addEventListener('click', () => {
-  // const button = popupProfile.querySelector('.popup__save');
+  const button = popupProfile.querySelector('.popup__save');
+  profileValidation.disableButton(popupProfile, button);
   // disableButton(popupProfile, button);
   openPopup(popupProfile);
-  profileValidation.enableValidation();
+  // profileValidation.enableValidation();
 
   nameEdit.value = visName.textContent;
   workEdit.value = visWork.textContent;
 });
 //кнопка сохранения попапа профиля
-formProfile.addEventListener('submit', (saveEdit) => {
+formProfile.addEventListener('submit', () => {
   // saveEdit.preventDefault();
   visName.textContent = nameEdit.value;
   visWork.textContent = workEdit.value;
@@ -112,8 +113,9 @@ formProfile.addEventListener('submit', (saveEdit) => {
 });
 //кнокпа открытия попапа добавления
 openAdd.addEventListener('click', () => {
-  // const button = popupProfile.querySelector('.popup__save');
-  addValidation.enableValidation();
+  const button = popupAdd.querySelector('.popup__save');
+  addValidation.disableButton(popupAdd, button);
+  // addValidation.enableValidation();
   openPopup(popupAdd);
 
   // disableButton(popupProfile, button);
@@ -201,8 +203,8 @@ function createCard(item) {
 ///включение валидации
 const profileValidation = new FormValidator(validationConfig, formProfile);
 const addValidation = new FormValidator(validationConfig, formAdd);
-// profileValidation.enableValidation();
-// addValidation.enableValidation();
+profileValidation.enableValidation();
+addValidation.enableValidation();
 //закрытие кнопкой esc
 function handleEscape(evt) {
   if (evt.key === 'Escape') {
