@@ -76,7 +76,6 @@ class FormValidator {
   disableButton = (form, button) => {
     const inputs = form.querySelectorAll('.popup__input');
     const arrInputs = Array.from(inputs);
-    console.log(arrInputs);
     arrInputs.forEach((input) => {
       if (!input.validity.valid) {
         button.classList.add('popup__save_inactive');
