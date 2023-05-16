@@ -13,20 +13,20 @@ class Card {
   }
 
   _setEventListeners() {
-    const likeButton = this._element.querySelector('.element__like');
-    const deleteButton = this._element.querySelector('.element__delete');
-    const cardImage = this._element.querySelector('.element__photo');
+    this._likeButton = this._element.querySelector('.element__like');
+    this._deleteButton = this._element.querySelector('.element__delete');
+    this._cardImage = this._element.querySelector('.element__photo');
 
-    cardImage.addEventListener('click', () => {
+    this._cardImage.addEventListener('click', () => {
       this._handleOpenPopup();
     });
 
-    deleteButton.addEventListener('click', () => {
+    this._deleteButton.addEventListener('click', () => {
       this._removeCard();
     });
 
-    likeButton.addEventListener('click', () => {
-      this._toggleLike(likeButton);
+    this._likeButton.addEventListener('click', () => {
+      this._toggleLike();
     });
   }
 
@@ -41,9 +41,9 @@ class Card {
     this._element.remove();
   }
 
-  _toggleLike(likeButton) {
-    likeButton.classList.toggle('element__like_active');
-  }
+  _toggleLike = () => {
+    this._likeButton.classList.toggle('element__like_active');
+  };
 
   _getTemplate() {
     const cardElement = document

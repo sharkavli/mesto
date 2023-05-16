@@ -69,6 +69,7 @@ const popupImg = document.querySelector('#popupImg');
 // const deleteEl = cardElements.querySelector('.element__delete');
 const closeButtons = document.querySelectorAll('.popup__close');
 const elementList = document.querySelector('.elements');
+const button = popupAdd.querySelector('.popup__save');
 //проверка кнопки
 // const disableButton = (form, button) => {
 //   const inputs = form.querySelectorAll('.popup__input');
@@ -94,7 +95,6 @@ export function closePopup(popup) {
 }
 //кнопки открытия попапа профиля
 edit.addEventListener('click', () => {
-  const button = popupProfile.querySelector('.popup__save');
   profileValidation.disableButton(popupProfile, button);
   // disableButton(popupProfile, button);
   openPopup(popupProfile);
@@ -113,7 +113,6 @@ formProfile.addEventListener('submit', () => {
 });
 //кнокпа открытия попапа добавления
 openAdd.addEventListener('click', () => {
-  const button = popupAdd.querySelector('.popup__save');
   addValidation.disableButton(popupAdd, button);
   // addValidation.enableValidation();
   openPopup(popupAdd);
