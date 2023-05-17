@@ -40,14 +40,7 @@ const validationConfig = {
 import Card from './Card.js';
 import FormValidator from './FormValidator.js';
 
-// const popupImage = document.querySelector('.popup__image');
-// const popupBottomText = document.querySelector('.popup__text');
-// const closeImage = document.querySelector('#closeImg');
-// const cardsSection = document.querySelector('.elements');
-// const cardsTemplate = document.querySelector('#elements').content;
 const edit = document.querySelector('.profile__edit-button');
-// const closeProfile = document.querySelector('#closeProfile');
-// const closeAdd = document.querySelector('#closeAdd');
 const formProfile = document.querySelector('#formProfile');
 const nameEdit = document.querySelector('#inputName');
 const workEdit = document.querySelector('#inputWork');
@@ -56,35 +49,12 @@ const visName = document.querySelector('.profile__name');
 const visWork = document.querySelector('.profile__work');
 const openAdd = document.querySelector('.profile__add-button');
 const popupAdd = document.querySelector('#popupAdd');
-// const titleEdit = document.querySelector('#inputTitle');
-// const linkEdit = document.querySelector('#inputLink');
 const formAdd = document.querySelector('#formAdd');
 const popupImg = document.querySelector('#popupImg');
-// const popupImage = document.querySelector('.popup__image');
-// const closeImg = document.querySelector('#closeImg');
-// const popupBottomText = document.querySelector('.popup__text');
-// const cardElements = cardsTemplate.querySelector('.element').cloneNode(true);
-// const cardImage = cardElements.querySelector('.element__photo');
-// const cardName = cardElements.querySelector('.element__name');
-// const deleteEl = cardElements.querySelector('.element__delete');
 const closeButtons = document.querySelectorAll('.popup__close');
 const elementList = document.querySelector('.elements');
 const buttonSaveProfile = formProfile.querySelector('.popup__save');
 const buttonSaveAdd = formAdd.querySelector('.popup__save');
-//проверка кнопки
-// const disableButton = (form, button) => {
-//   const inputs = form.querySelectorAll('.popup__input');
-//   const arrInputs = Array.from(inputs);
-//   arrInputs.forEach((input) => {
-//     if (!input.validity.valid) {
-//       button.classList.add('popup__save_inactive');
-//       button.setAttribute('disabled', true);
-//     } else {
-//       button.classList.remove('popup__save_inactive');
-//       button.removeAttribute('disabled', true);
-//     }
-//   });
-// };
 //функции открытия и закрытия всех попапов
 export function openPopup(popup) {
   popup.classList.add('popup_opened');
@@ -96,17 +66,13 @@ export function closePopup(popup) {
 }
 //кнопки открытия попапа профиля
 edit.addEventListener('click', () => {
-  profileValidation.disableButton(popupProfile, buttonSaveProfile);
-  // disableButton(popupProfile, button);
+  profileValidation.disableButton();
   openPopup(popupProfile);
-  // profileValidation.enableValidation();
-
   nameEdit.value = visName.textContent;
   workEdit.value = visWork.textContent;
 });
 //кнопка сохранения попапа профиля
 formProfile.addEventListener('submit', () => {
-  // saveEdit.preventDefault();
   visName.textContent = nameEdit.value;
   visWork.textContent = workEdit.value;
   closePopup(popupProfile);
@@ -114,11 +80,8 @@ formProfile.addEventListener('submit', () => {
 });
 //кнокпа открытия попапа добавления
 openAdd.addEventListener('click', () => {
-  addValidation.disableButton(popupAdd, buttonSaveAdd);
-  // addValidation.enableValidation();
+  addValidation.disableButton();
   openPopup(popupAdd);
-
-  // disableButton(popupProfile, button);
 });
 //функция закрытие по всем крестикам
 closeButtons.forEach((button) => {
@@ -127,60 +90,10 @@ closeButtons.forEach((button) => {
   // устанавливаем обработчик закрытия на крестик
   button.addEventListener('click', () => closePopup(popup));
 });
-//карточки из массива
-// function addCard(item) {
-//   const cardElements = cardsTemplate.querySelector('.element').cloneNode(true);
-//   const cardImage = cardElements.querySelector('.element__photo');
-//   const cardName = cardElements.querySelector('.element__name');
-//   const deleteEl = cardElements.querySelector('.element__delete');
-//   //открытие картинки
-//   cardImage.addEventListener('click', () => {
-//     openPopup(popupImg);
-//     popupImage.setAttribute('src', cardImage.src);
-//     popupImage.alt = cardName.textContent;
-//     popupBottomText.textContent = cardName.textContent;
-//   });
-//   //лайк
-//   cardElements
-//     .querySelector('.element__like')
-//     .addEventListener('click', function (evt) {
-//       evt.target.classList.toggle('element__like_active');
-//     });
-//   //удаление карточки
-//   deleteEl.addEventListener('click', function () {
-//     const listEl = deleteEl.closest('.element');
-//     listEl.remove();
-//   });
-//   //присвоение картинок на страницу из массива
-//   cardImage.src = item.link;
-//   cardImage.alt = item.name;
-//   cardName.textContent = item.name;
-//   return cardElements;
-// }
-// //перебор массива
-// initialCards.forEach(function (item) {
-//   const createCard = addCard(item);
-//   cardsSection.append(createCard);
-// });
-// //добавление новых карточек
-// function handleCardFormSubmit() {
-//   // item.preventDefault();
-//   const item = {
-//     link: inputLink.value,
-//     name: inputTitle.value,
-//   };
-//   const card = addCard(item);
-//   cardsSection.prepend(card);
-//   closePopup(popupAdd);
-//   formAdd.reset();
-// }
 //кнопка добавления карточки
 formAdd.addEventListener('submit', (evt) => {
   evt.preventDefault();
   const data = Object.fromEntries(new FormData(evt.target));
-  // const card = new Card(data, '#elements');
-  // const cardElement = card.generateCard();
-  // const newCard = createCard(data);
   elementList.prepend(createCard(data));
   closePopup(popupAdd);
   formAdd.reset();
@@ -188,9 +101,6 @@ formAdd.addEventListener('submit', (evt) => {
 //отображение карточек из массива
 const renderCards = () => {
   initialCards.forEach((item) => {
-    // const card = new Card(item, '#elements');
-    // const cardElement = card.generateCard();
-    // elementList.append(cardElement);
     elementList.append(createCard(item));
   });
 };
