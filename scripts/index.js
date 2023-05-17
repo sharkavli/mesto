@@ -5,28 +5,28 @@
 // я его удалю сразу же после сдачи
 const initialCards = [
   {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg',
+    name: 'Патонг',
+    link: 'https://cdn.discordapp.com/attachments/776893136277340190/1108417364434878594/patong.jpg',
   },
   {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg',
+    name: 'Хургада',
+    link: 'https://cdn.discordapp.com/attachments/776893136277340190/1108416848984277033/khurgada.JPG',
   },
   {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg',
+    name: 'Каир',
+    link: 'https://cdn.discordapp.com/attachments/776893136277340190/1108421366929170583/cairo.jpg',
   },
   {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg',
+    name: 'Анталья',
+    link: 'https://cdn.discordapp.com/attachments/776893136277340190/1108420499198967870/antalya.jpg',
   },
   {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg',
+    name: 'Шарм-Эль-Шейх',
+    link: 'https://cdn.discordapp.com/attachments/776893136277340190/1108420500318846986/sharm_el_sheikh.jpg',
   },
   {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg',
+    name: 'Алания',
+    link: 'https://cdn.discordapp.com/attachments/776893136277340190/1108420499538722876/alanya.jpg',
   },
 ];
 const validationConfig = {
