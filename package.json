@@ -1,0 +1,14 @@
+{
+  "name": "mesto",
+  "version": "0.0.1",
+  "description": "Проект \"Место\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michael Saidov",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.83.1"
+  }
+}

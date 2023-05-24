@@ -1,15 +1,9 @@
-const popupImg = document.querySelector('#popupImg');
-const popupImage = document.querySelector('.popup__image');
-const popupBottomText = document.querySelector('.popup__text');
-import { openPopup, closePopup } from './index.js';
-
 class Card {
-  constructor(item, templateSelector) {
+  constructor({ data, handleCardClick }, templateSelector) {
     this._templateSelector = templateSelector;
-    this._image = item.link;
-    this._name = item.name;
-    this._openPopupFunction = openPopup;
-    this._closePopupFunction = closePopup;
+    this._image = data.link;
+    this._name = data.name;
+    this._handleCardClick = handleCardClick;
   }
 
   _setEventListeners() {
@@ -18,7 +12,7 @@ class Card {
     this._cardImage = this._element.querySelector('.element__photo');
 
     this._cardImage.addEventListener('click', () => {
-      this._handleOpenPopup();
+      this._handleCardClick(this._image, this._name);
     });
 
     this._deleteButton.addEventListener('click', () => {
@@ -28,13 +22,6 @@ class Card {
     this._likeButton.addEventListener('click', () => {
       this._toggleLike();
     });
-  }
-
-  _handleOpenPopup() {
-    this._openPopupFunction(popupImg);
-    popupImage.setAttribute('src', this._image);
-    popupImage.alt = this._name;
-    popupBottomText.textContent = this._name;
   }
 
   _removeCard() {
