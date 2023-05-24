@@ -64,24 +64,20 @@ const userInfo = new UserInfo({
 //инстанс класса для попапа добавления
 const addInfo = new PopupWithForm({
   popupSelector: popupAdd,
-  handleFormSubmit: (data) => {
-    // elementList.prepend(createCard(data));
-    section.addItem(data);
-  },
-});
-addInfo.setEventListeners();
-//инстанс класса для попапа профиля
-const profileInfo = new PopupWithForm({
-  popupSelector: popupProfile,
-  // handleFormSubmit: (data) => {
-  //   elementList.prepend(createCard(data));
-  // },
   handleFormSubmit: (input) => {
     const data = {
       name: input.name,
       link: input.link,
     };
     section.addItem(createCard(data));
+  },
+});
+addInfo.setEventListeners();
+//инстанс класса для попапа профиля
+const profileInfo = new PopupWithForm({
+  popupSelector: popupProfile,
+  handleFormSubmit: (data) => {
+    userInfo.setUserInfo(data);
   },
 });
 profileInfo.setEventListeners();
@@ -100,7 +96,7 @@ openAddButton.addEventListener('click', () => {
 //отображение и открытие карточек
 const popupCard = new PopupWithImage(cardImage);
 
-const createCard = (cardData) => {
+function createCard(cardData) {
   const card = new Card(
     {
       data: cardData,
@@ -112,12 +108,7 @@ const createCard = (cardData) => {
   );
   const cardElement = card.generateCard();
   return cardElement;
-};
-
-createCard({
-  name: 'null',
-  link: 'https://upload.wikimedia.org/wikipedia/commons/2/29/TashkentCity.jpg',
-});
+}
 //отображение карточек из массива
 const section = new Section(
   { items: initialCards, renderer: renderCard },
