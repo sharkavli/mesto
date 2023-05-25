@@ -37,12 +37,14 @@ const validationConfig = {
   inputErrorClass: 'popup__input_error',
   errorClass: 'popup__error-message_active',
 };
-import Card from './Card.js';
-import FormValidator from './FormValidator.js';
-import Section from './Section.js';
-import PopupWithImage from './PopupWithImage.js';
-import PopupWithForm from './PopupWithForm.js';
-import UserInfo from './UserInfo.js';
+
+import './index.css';
+import Card from '../components/Card.js';
+import FormValidator from '../components/FormValidator.js';
+import Section from '../components/Section.js';
+import PopupWithImage from '../components/PopupWithImage.js';
+import PopupWithForm from '../components/PopupWithForm.js';
+import UserInfo from '../components/UserInfo.js';
 
 const openProfileButton = document.querySelector('.profile__edit-button');
 const formProfile = document.querySelector('#formProfile');
@@ -95,7 +97,7 @@ openAddButton.addEventListener('click', () => {
 });
 //отображение и открытие карточек
 const popupCard = new PopupWithImage(cardImage);
-
+popupCard.setEventListeners();
 function createCard(cardData) {
   const card = new Card(
     {
@@ -118,7 +120,7 @@ function renderCard(cardData) {
   const cardElement = createCard(cardData);
   section.addItem(cardElement);
 }
-section.renderItems();
+section.renderItems(initialCards);
 ///включение валидации
 const profileValidation = new FormValidator(validationConfig, formProfile);
 const addValidation = new FormValidator(validationConfig, formAdd);
