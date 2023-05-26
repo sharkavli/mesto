@@ -1,11 +1,9 @@
 import Popup from './Popup.js';
 
 export default class PopupWithImage extends Popup {
-  constructor(popupSelector) {
-    super(popupSelector);
+  constructor(popupElement) {
+    super(popupElement);
 
-    this._cardImage = document.querySelector('.element__photo');
-    this._cardName = document.querySelector('.element__name');
     this._popupImage = document.querySelector('.popup__image');
     this._popupImageBottomText = document.querySelector('.popup__text');
   }
@@ -18,9 +16,5 @@ export default class PopupWithImage extends Popup {
     this._popupImage.alt = this._name;
 
     super.open();
-  }
-
-  setEventListeners() {
-    super.setEventListeners();
   }
 }

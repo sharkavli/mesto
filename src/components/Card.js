@@ -10,6 +10,8 @@ class Card {
     this._likeButton = this._element.querySelector('.element__like');
     this._deleteButton = this._element.querySelector('.element__delete');
     this._cardImage = this._element.querySelector('.element__photo');
+    this._photoElement = this._element.querySelector('.element__photo');
+    this._nameElement = this._element.querySelector('.element__name');
 
     this._cardImage.addEventListener('click', () => {
       this._handleCardClick(this._image, this._name);
@@ -44,9 +46,9 @@ class Card {
     this._element = this._getTemplate();
     this._setEventListeners();
 
-    this._element.querySelector('.element__photo').src = this._image;
-    this._element.querySelector('.element__name').textContent = this._name;
-    this._element.querySelector('.element__photo').alt = this._name;
+    this._photoElement.src = this._image;
+    this._nameElement.textContent = this._name;
+    this._photoElement.alt = this._name;
     return this._element;
   }
 }

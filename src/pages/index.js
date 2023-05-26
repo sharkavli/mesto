@@ -3,6 +3,14 @@
 // исправлений от ревью или ошибок я мог смотреть в старый код и не вспоминать или
 // вообще писать функционал по-новой.
 // я его удалю сразу же после сдачи
+import './index.css';
+import Card from '../components/Card.js';
+import FormValidator from '../components/FormValidator.js';
+import Section from '../components/Section.js';
+import PopupWithImage from '../components/PopupWithImage.js';
+import PopupWithForm from '../components/PopupWithForm.js';
+import UserInfo from '../components/UserInfo.js';
+
 const initialCards = [
   {
     name: 'Патонг',
@@ -38,14 +46,6 @@ const validationConfig = {
   errorClass: 'popup__error-message_active',
 };
 
-import './index.css';
-import Card from '../components/Card.js';
-import FormValidator from '../components/FormValidator.js';
-import Section from '../components/Section.js';
-import PopupWithImage from '../components/PopupWithImage.js';
-import PopupWithForm from '../components/PopupWithForm.js';
-import UserInfo from '../components/UserInfo.js';
-
 const openProfileButton = document.querySelector('.profile__edit-button');
 const formProfile = document.querySelector('#formProfile');
 const popupProfile = document.querySelector('#popupProfile');
@@ -64,8 +64,8 @@ const userInfo = new UserInfo({
   aboutInfoElement: profileAbout,
 });
 //инстанс класса для попапа добавления
-const addInfo = new PopupWithForm({
-  popupSelector: popupAdd,
+const popupAddCard = new PopupWithForm({
+  popupElement: popupAdd,
   handleFormSubmit: (input) => {
     const data = {
       name: input.name,
@@ -74,26 +74,26 @@ const addInfo = new PopupWithForm({
     section.addItem(createCard(data));
   },
 });
-addInfo.setEventListeners();
+popupAddCard.setEventListeners();
 //инстанс класса для попапа профиля
-const profileInfo = new PopupWithForm({
-  popupSelector: popupProfile,
+const popupEditProfile = new PopupWithForm({
+  popupElement: popupProfile,
   handleFormSubmit: (data) => {
     userInfo.setUserInfo(data);
   },
 });
-profileInfo.setEventListeners();
+popupEditProfile.setEventListeners();
 //кнопка открытия попапа профиля
 openProfileButton.addEventListener('click', () => {
   const data = userInfo.getUserInfo();
   nameInput.value = data.userName;
   aboutInput.value = data.userAbout;
-  profileInfo.open();
+  popupEditProfile.open();
 });
 //кнопка открытия попапа добавления
 openAddButton.addEventListener('click', () => {
   addValidation.disableButton();
-  addInfo.open();
+  popupAddCard.open();
 });
 //отображение и открытие карточек
 const popupCard = new PopupWithImage(cardImage);
