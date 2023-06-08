@@ -13,7 +13,9 @@
         <img src="./images/logo.svg" alt="Лого" class="header__logo" />
       </header>
       <section class="profile">
-        <img src="./images/avatar.svg" alt="аватар" class="profile__avatar" />
+        <button class="profile__edit-avatar">
+          <img src="./images/avatar.svg" alt="аватар" class="profile__avatar" />
+        </button>
         <div class="profile__info">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
           <p class="profile__work">Исследователь океана</p>
@@ -46,7 +48,7 @@
               minlength="2"
               maxlength="200"
               id="inputWork"
-              name="work"
+              name="about"
               class="popup__input"
               type="text"
               placeholder="Род деятельности"
@@ -93,6 +95,33 @@
         <p class="popup__text"></p>
       </div>
     </div>
+    <div class="popup" id="popupDelete">
+      <div class="popup__container popup__delete-container">
+        <div class="popup__close" id="closeDelete"></div>
+        <p class="popup__delete-question">Вы уверены?</p>
+        <button type="submit" class="popup__save popup__save-delete">Да</button>
+      </div>
+    </div>
+    <div class="popup" id="popupEditAvatar">
+      <div class="popup__container">
+        <div class="popup__close" id="closeDelete"></div>
+        <p class="popup__info popup__avatat-info">Обновить аватар</p>
+        <form novalidate class="popup__form" name="avatarinfo" id="formAvatar">
+          <input
+            required
+            id="inputAvatarLink"
+            name="link"
+            class="popup__input"
+            type="url"
+            placeholder="Ссылка на картинку"
+          />
+          <span id="inputAvatarLink-error" class="popup__error-message"></span>
+          <button type="submit" class="popup__save popup__save-avatar">
+            Сохранить
+          </button>
+        </form>
+      </div>
+    </div>
     <template id="elements">
       <div class="element">
         <button type="button" class="element__delete" id="deleteEl"></button>
@@ -101,6 +130,7 @@
           <h2 class="element__name"></h2>
           <button type="button" class="element__set-like">
             <img src="./images/like.svg" alt="Нравится" class="element__like" />
+            <p class="element__like-count"></p>
           </button>
         </div>
       </div>

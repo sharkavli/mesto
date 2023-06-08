@@ -1,7 +1,7 @@
 .element__panel {
   display: flex;
   justify-content: space-between;
-  padding: 24px calc((100% - 246px) / 2) 26px;
+  padding: 24px calc((100% - 246px) / 2) 12px;
   height: min-content;
 }
 
