@@ -10,18 +10,13 @@ export default class PopupWithDelete extends Popup {
 
   setEventListeners() {
     this._confirmButton.addEventListener('click', () => {
+      this._confirmButton.textContent = 'Удаление..';
       this.deleteCard(this.card._cardId);
       this.card.removeCard();
       this.close();
     });
 
     super.setEventListeners();
-  }
-
-  close() {
-    this._confirmButton.textContent = 'Удаление..';
-
-    super.close();
   }
 
   open(card) {

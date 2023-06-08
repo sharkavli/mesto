@@ -1,7 +1,5 @@
 .popup__delete-container {
   position: relative;
-  width: auto;
-  height: auto;
   background-color: #ffff;
   border-radius: 10px;
   width: 430px;
