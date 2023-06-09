@@ -171,9 +171,12 @@ function createCard(data) {
         popupCard.open(data);
       },
       handeLikeClick: (cardId, isLiked) => {
-        api.toggleLike(cardId, isLiked).then((data) => {
-          card.toggleLike(data.likes).catch((err) => console.log(err));
-        });
+        api
+          .toggleLike(cardId, isLiked)
+          .then((data) => {
+            card.toggleLike(data.likes);
+          })
+          .catch((err) => console.log(err));
       },
       handeDeleteClick: () => {
         popupDelete.open(card);
