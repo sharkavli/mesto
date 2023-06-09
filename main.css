@@ -17,7 +17,7 @@
 .element__photo{aspect-ratio:1/1;cursor:pointer;-o-object-fit:cover;object-fit:cover;width:100%}
 .element__panel{display:flex;height:-moz-min-content;height:min-content;justify-content:space-between;padding:24px calc(50% - 123px) 12px}@media screen and (max-width:1279px){.element__panel{padding:2vw calc(50% - 9.5vw)}}@media screen and (max-width:1078px){.element__panel{padding:24px calc(50% - 123px) 26px}}@media screen and (max-width:843px){.element__panel{padding:2vw calc(50% - 30vw)}}@media screen and (max-width:400px){.element__panel{padding:24px calc(50% - 123px) 26px}}
 .element__name{font-size:24px;font-style:normal;font-weight:900;line-height:29px;margin:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.element__like_active{background-image:url("images/like%20black.fe17a515669479b1e649.svg");opacity:1}
+.element__like_active{background-image:url(images/likeBlack.fe17a515669479b1e649.svg);opacity:1}
 .element__like{cursor:pointer}.element__like:hover{opacity:.5}
 .element__like-count{margin:0}
 .element__set-like{background-color:transparent;border:none}
@@ -26,7 +26,7 @@
 .footer__text{color:#545454;font-size:18px;font-style:normal;font-weight:400;line-height:22px;margin:0}@media screen and (max-width:500px){.footer__text{font-size:14px;font-weight:400;letter-spacing:0;line-height:17px;text-align:left}}
 .popup{align-items:center;background-color:rgba(0,0,0,.5);display:flex;height:100vh;justify-content:center;left:0;opacity:0;position:fixed;top:0;transition:opacity .5s ease,visibility .3s ease;visibility:hidden;width:100%}
 .popup__container{background-color:#fff;border-radius:10px;box-shadow:0 0 25px rgba(0,0,0,.15);box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-around;padding:0 36px;position:relative;text-align:left;width:430px}@media screen and (max-width:560px){.popup__container{font-size:18px;font-style:normal;font-weight:900;line-height:22px;padding:0 22px;width:282px}}
-.popup__close{background-color:transparent;background-image:url("images/Close%20Icon.2ceb783afbab75916ddc.svg");background-repeat:no-repeat;border:none;cursor:pointer;height:32px;position:absolute;right:-40px;top:-40px;width:32px}.popup__close:hover{opacity:.6}@media screen and (max-width:560px){.popup__close{background-position:50%;height:20px;right:0;top:-35px;width:20px}}
+.popup__close{background-color:transparent;background-image:url(images/CloseIcon.2ceb783afbab75916ddc.svg);background-repeat:no-repeat;border:none;cursor:pointer;height:32px;position:absolute;right:-40px;top:-40px;width:32px}.popup__close:hover{opacity:.6}@media screen and (max-width:560px){.popup__close{background-position:50%;height:20px;right:0;top:-35px;width:20px}}
 .popup__info{font-size:24px;font-style:normal;font-weight:900;line-height:29px;margin:0;padding-top:34px}@media screen and (max-width:560px){.popup__info{font-size:18px;line-height:22px;padding-bottom:0;padding-top:25px}}
 .popup__form{display:flex;flex-direction:column}
 .popup__input{border:none;border-bottom:1px solid rgba(0,0,0,.2);font-size:14px;font-style:normal;font-weight:400;line-height:17px;margin-top:30px}#inputLink,#inputWork{margin-bottom:50px}#inputName,#inputTitle{margin-top:50px}@media screen and (max-width:560px){#inputName,#inputTitle{margin-top:80px}}#inputAvatarLink{margin-top:54px}
